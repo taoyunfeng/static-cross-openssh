@@ -35,7 +35,7 @@ define openssh/build =
 	+cd $(openssh/dir)
 	env PATH='$(host_path)' autoreconf -i
 	./configure LDFLAGS="-static $(LDFLAGS)" LIBS="-lpthread" \
-		--prefix="$(prefix)" --host="$(host_triplet)" --disable-strip \
+		--prefix="$(prefix)" --host="$(host_triplet)" --sysconfdir="$(if $(SYSCONFDIR),$(SYSCONFDIR),/etc/ssh)" --disable-strip \
 		--with-privsep-user=root --with-privsep-path=$(prefix)/var/empty
 	'$(MAKE)'
 endef
