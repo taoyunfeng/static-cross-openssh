@@ -12,7 +12,7 @@ export config_file := $(top_dir)/.config
 
 # Configuration items, default values
 export arch   := aarch64
-export prefix := /system/opt/openssh
+export prefix := /data/opt/openssh
 export shrink := SHRINK_LEVEL_NONE
 
 # Need this for SHRINK_LEVEL_* definitions
